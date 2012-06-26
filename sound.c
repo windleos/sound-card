@@ -1,7 +1,6 @@
 /*
  * sound.c
  */
-
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
