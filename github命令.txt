@@ -1,0 +1,10 @@
+cd D:/a/
+ssh-keygen
+找C:\Documents and Settings\Administrator\.ssh\id***.pub打开
+全选复制
+ssh -T git@github.com
+git config --global user.name "1090310214"
+git config --global user.email "422478972@qq.com"
+git init
+git remote add origin git@github.com:1090310214/sound-card.git
+git add .
