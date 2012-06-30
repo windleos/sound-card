@@ -8,3 +8,5 @@ git config --global user.email "422478972@qq.com"
 git init
 git remote add origin git@github.com:1090310214/sound-card.git
 git add .
+git commit -m "bendan"
+git push origin master
