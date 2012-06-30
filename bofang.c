@@ -46,27 +46,27 @@ int play_sound(char *filename)
         handler=open(Dsp_Device,O_WRONLY);
         if(handler==-1)
         {
-                perror("open Dsp_Device failed");
+                printf("open Dsp_Device failed");
                 return -1;
         }
         arg=Sample_Rate;
         status=ioctl(handler,SOUND_PCM_WRITE_RATE,&arg);
         if(status==-1)
         {
-                perror("error from SOUND_PCM_WRITE_RATE ioctl");
+                printf("error from Sample_Rate");
                 return -1;
         }
         arg=Sample_Size;
         status=ioctl(handler,SOUND_PCM_WRITE_BITS,&arg);
         if(status==-1)
         {
-                perror("error from SOUND_PCM_WRITE_BITS ioctl");
+                printf("error from Sample_Size");
                 return -1;
         }
         result=write(handler,buf,stat_buf.st_size);
         if(result==-1)
         {
-                perror("Fail to play the sound");
+                printf("Fail to play the sound");
                 return -1;
         }
         free(buf);
