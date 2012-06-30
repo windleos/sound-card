@@ -12,13 +12,14 @@ int main()
 	int dir;
 	snd_pcm_uframes_t frames;
 	char* buffer;
-
-	if ( (rc = snd_pcm_open(&handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) < 0)
+snd_pcm_open(&handle, "default", SND_PCM_STREAM_PLAYBACK, 0);
+        //printf("a");
+	/*if ( (rc = snd_pcm_open(&handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) < 0)
 	{
 		std::cerr << "unable to open pcm device: " << snd_strerror(rc) << std::endl;
 		exit(1);
 	}
-
+	printf("b");*/
 	snd_pcm_hw_params_alloca(&params);
 
 	snd_pcm_hw_params_any(handle, params);
@@ -70,10 +71,10 @@ int main()
 		else if (rc != (int)frames)
 			std::cerr << "short write, write " << rc << " frames" << std::endl;
 	}
-
+/*
 	snd_pcm_drain(handle);
 	snd_pcm_close(handle);
-	free(buffer);
+	free(buffer);*/
 
 	return 0;
 }
